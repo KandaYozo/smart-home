@@ -1,0 +1,34 @@
+/*
+ * UART.h
+ *
+ * Created: 6/9/2017 3:54:40 AM
+ *  Author: A.Aboelmakarem
+ */ 
+
+
+#ifndef UART_H_
+#define UART_H_
+
+
+#define BAUDRATE  9600
+#define FCPU      8000000
+////////////////////////////////////////////////////////
+////////// prototypes /////////////////////////////////
+//////////////////////////////////////////////////////
+void UART_Init(void );
+void UART_Transmit( char Data ) ;
+void UART_Receive( char *PtrToData );
+
+
+//////////////////////////////////////////////////////
+//////////////// Configuration //////////////////////
+////////////////////////////////////////////////////
+#define UBRR_INIT   ((FCPU)/(BAUDRATE*16UL)-1)
+#define UCSRB_INIT   0b00011000
+#define UCSRC_INIT   0b10000110
+
+
+
+
+
+#endif /* UART_H_ */
